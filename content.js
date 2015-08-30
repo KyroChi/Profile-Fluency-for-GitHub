@@ -64,7 +64,7 @@ Follow the programming style that is already present in this extension.
 After contributing add your name to the AUTHORED_BY variable so that your work is appropriatly credited
 
 GitHub Repository:
-TODO
+https://github.com/kyrochi/githubprofilefluency
 
 Google Chrome Extension WareHouse:
 TODO
@@ -72,29 +72,6 @@ TODO
  */
 
 var AUTHORED_BY = ["Kyle Chickering"];
-
-/*
-Handle browser based authentication tokens on a user basis to secure account information and
-maintain API OAuth authentication standards
-
-for testing and ease of use you can use a personal access token here instead of going through the authentication
-do not push your access token to a public repository or share this token with anyone, treat it like a password.
- */
-
-var ACCESS_TOKEN = "";
-
-/*
-var CLIENT_ID = "bb08a2ba2bfd420d57cc";
-var CLIENT_SECRET = "03f3eaa9c6d968c2ec547bb8d0e68eb1eb1cf794";
-
-if(!ACCESS_TOKEN) {
-    if (!CLIENT_ID || !CLIENT_SECRET) {
-
-        ACCESS_TOKEN = "c1a438bab179f491cc72e0d019af0169179d7966";
-
-    }
-}
-*/
 
 /*
 JSON Dependencies include:

@@ -29,7 +29,7 @@
         "https://github.com/*/*"],
 
       "js":
-      ["ACCESS_TOKEN.js", "content.js"],
+      ["ACCESS_TOKEN.js", "github_colors.js", "content.js"],
 
       "run_at":
       "document_start"

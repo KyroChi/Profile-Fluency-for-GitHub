@@ -2,8 +2,8 @@
 
 A Google Chrome plugin to display languages that a GitHub user knows
 
-![current version](https://img.shields.io/badge/version-1.3.0-green.svg)
-![current release](https://img.shields.io/badge/release-1.3.0-green.svg)
+![current version](https://img.shields.io/badge/version-1.4.0-green.svg)
+![current release](https://img.shields.io/badge/release-1.4.0-green.svg)
 
 [Get the extension here!](https://chrome.google.com/webstore/detail/github-profile-fluency/ebehmeojfclfifngmnfedkbakddbecja)
 

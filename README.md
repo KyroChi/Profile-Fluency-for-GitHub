@@ -2,11 +2,10 @@
 
 A Google Chrome plugin to display languages that a GitHub user knows
 
-![current build](https://img.shields.io/badge/current-1.2.0-green.svg)
-![build passing](https://img.shields.io/badge/build-passing-green.svg)
-![current release](https://img.shields.io/badge/release-n/a-red.svg)
+![current version](https://img.shields.io/badge/version-1.3.0-green.svg)
+![current release](https://img.shields.io/badge/release-1.3.0-green.svg)
 
-This extension is currently `UNAVAILABLE` on the Chrome Extension Warehouse
+[Get the extension here!](https://chrome.google.com/webstore/detail/github-profile-fluency/ebehmeojfclfifngmnfedkbakddbecja)
 
 This plugin adds a language display bar at the top of a user's profile. The display shows how many languages the user has used in their public repositories and has a color bar that mimics that of the repository language statistics bar.
 

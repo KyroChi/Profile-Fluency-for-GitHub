@@ -24,7 +24,7 @@
 
 var EXTENSION_NAME = "GitHub Profile Fluency Widget";
 
-var Current_Build_is =                                "v1.3.0";
+var Current_Build_is =                                "v1.4.0";
 var Current_Release_is =                              "n/a";
 
 
@@ -65,7 +65,7 @@ var Current_Release_is =                              "n/a";
 // https://github.com/kyrochi/githubprofilefluency
 //
 // Google Chrome Extension WareHouse:
-// TODO
+// https://goo.gl/lryKuS
 
 var AUTHORED_BY = ["Kyle Chickering"];
 

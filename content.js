@@ -1,102 +1,95 @@
-/*
-The MIT License (MIT)
-
-Copyright (c) 2015 Kyle Chickering
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
- */
+// The MIT License (MIT)
+//
+// Copyright (c) 2015 Kyle Chickering
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 "use strict";
 
 var EXTENSION_NAME = "GitHub Profile Fluency Widget";
 
-var GitHub_Profile_Fluency_Chrome_Extension =         "v1.1.0";
-var Current_Build_is =                                "v1.1.0";
-var Current_Release_is =                              "1.1.0";
+var Current_Build_is =                                "v1.3.0";
+var Current_Release_is =                              "n/a";
 
-/*
-vx.0.0 = major changes, will no longer be compatible
-update status: update immediately
 
-v0.x.0 = minor changes
-update status: recommend update
-
-v0.0.x = bug fixes
-update status: not a required update
-
-Release Notes for v1.1.0:
-
-Release Notes for v1.2.0:
-
-TODO:
-- fix display so that languages don't spill out of box if user has lots of languages
-- Fix Authentication
-- Get all languages in a repository, not just the repository.language attribute
-- Only show languages from files that the user is a direct contributor to
-- Look for updates and auto-update
-- Settings to turn off auto-update
-- Extension Information
-- fix null language displaying by removing from calculations
-
-This extension adds a box to a user's profile which displays the languages they know based
-off of repositories that they have contributed to
-
-Contribution GuideLines:
-If you are interested in contributing create a fork and create a merge request, your code will be reviewed before
-being merged and committed to master.
-Follow the programming style that is already present in this extension.
-After contributing add your name to the AUTHORED_BY variable so that your work is appropriatly credited
-
-GitHub Repository:
-https://github.com/kyrochi/githubprofilefluency
-
-Google Chrome Extension WareHouse:
-TODO
-
- */
+// vx.0.0 = major changes, will no longer be compatible
+// update status: update immediately
+//
+// v0.x.0 = minor changes
+// update status: recommend update
+//
+// v0.0.x = bug fixes
+// update status: not a required update
+//
+// Release Notes for v1.1.0:
+//
+// Release Notes for v1.2.0:
+//
+// Release Notes for v1.3.0:
+// - Removed all forms of authentication, ready for publishing on extension store
+//
+// TODO:
+// - fix display so that languages don't spill out of box if user has lots of languages
+// - Get all languages in a repository, not just the repository.language attribute
+// - Only show languages from files that the user is a direct contributor to
+// - Look for updates and auto-update
+// - Settings to turn off auto-update
+// - Extension Information
+//
+// This extension adds a box to a user's profile which displays the languages they know based
+// off of repositories that they have contributed to
+//
+// Contribution Guidelines:
+// If you are interested in contributing create a fork and create a merge request, your code will be reviewed before
+// being merged and committed to master.
+// Follow the programming style that is already present in this extension.
+// After contributing add your name to the AUTHORED_BY variable so that your work is appropriately credited
+//
+// GitHub Repository:
+// https://github.com/kyrochi/githubprofilefluency
+//
+// Google Chrome Extension WareHouse:
+// TODO
 
 var AUTHORED_BY = ["Kyle Chickering"];
 
-/*
-Default profile is:
 
-PROFILE = "/kyrochi"
-
-BASE_PATH = "https://www.github.com"
-PROFILE_PATH = BASE_PATH + PROFILE
-https://www.github.com/kyrochi
-
-make API calls to:
-
-BASE_API_PATH = "https://api.github.com/users"
-PROFILE_API_PATH = BASE_HTTPS_PATH + PROFILE
-https://api.github.com/users/kyrochi
-
-profile variable is the location of the profile where this extension pulls its information from
- */
+// Default profile is:
+//
+// PROFILE = "/kyrochi"
+//
+// BASE_PATH = "https://www.github.com"
+// PROFILE_PATH = BASE_PATH + PROFILE
+// https://www.github.com/kyrochi
+//
+// make API calls to:
+//
+// BASE_API_PATH = "https://api.github.com/users"
+// PROFILE_API_PATH = BASE_HTTPS_PATH + PROFILE
+// https://api.github.com/users/kyrochi
+//
+// profile variable is the location of the profile where this extension pulls its information from
 
 var profile = "/kyrochi";
 
-/*
-Gets the current URL of the profile you are viewing and derives the "/username" that is needed to send an
-API call to the GitHub API
- */
+// Gets the current URL of the profile you are viewing and derives the "/username" that is needed to send an
+// API call to the GitHub API
 
 function get_current_profile() {
 
@@ -108,9 +101,7 @@ function get_current_profile() {
 
 }
 
-/*
-Test function that explores data mining in the github api to return more detailed information
- */
+// Test function that explores data mining in the github api to return more detailed information
 
 function mine_from_API (){
 
@@ -151,25 +142,21 @@ function mine_from_API (){
 
 }
 
-/*
-  Creates all of the HTML for the lang stats display box and includes the logic used to translate the
-  GitHub API callback information into descending order by the size and type of their repositories
-
-  no additional CSS is needed to style DOM objects because the manifest specifies that only GitHub profile pages
-  will be injected with the "content.js" and all GitHub profile pages include the required style sheets
-  to style all of the created DOM objects. However it is necessary to add class names to all of your DOM
-  objects so that the GitHub's stylesheets recognize the object and style it accordingly. Preferred method
-  of adding a class to a DOM object is with the "element.className = class_name" method.
-*/
+// Creates all of the HTML for the lang stats display box and includes the logic used to translate the
+// GitHub API callback information into descending order by the size and type of their repositories
+//
+// no additional CSS is needed to style DOM objects because the manifest specifies that only GitHub profile pages
+// will be injected with the "content.js" and all GitHub profile pages include the required style sheets
+// to style all of the created DOM objects. However it is necessary to add class names to all of your DOM
+// objects so that the GitHub's stylesheets recognize the object and style it accordingly. Preferred method
+// of adding a class to a DOM object is with the "element.className = class_name" method.
 
 function new_organize_langs(repoLink) {
 
-    /*
-    Creates the DOM elements in DOM tree that the extension need to create the language display bar
-    DOM elements are nested according to their respective HTML nesting properties and
-    elements are appended to their parents inline with the parent and after all children have been
-    appended to the DOM.
-     */
+    // Creates the DOM elements in DOM tree that the extension need to create the language display bar
+    // DOM elements are nested according to their respective HTML nesting properties and
+    // elements are appended to their parents inline with the parent and after all children have been
+    // appended to the DOM.
 
     var div0 = document.createElement("DIV");
     div0.className = "context-loader-container";
@@ -402,17 +389,14 @@ function new_organize_langs(repoLink) {
 
 }
 
-/*
- Sends a request to the GitHub API and uses the callback values to add the code colors to the profile that
- is currently being viewed by the Google Chrome user.
- */
+
+// Sends a request to the GitHub API and uses the callback values to add the code colors to the profile that
+// is currently being viewed by the Google Chrome user.
 
 function display_language_fluency() {
 
-    /*
-    Request repository information from the GitHub API. GitHub API returns a callback with a JSON
-    object containing all of the information about the current profile's created repositories
-     */
+    // Request repository information from the GitHub API. GitHub API returns a callback with a JSON
+    // object containing all of the information about the current profile's created repositories
 
     var profile_request = new XMLHttpRequest();
 
@@ -422,12 +406,10 @@ function display_language_fluency() {
 
             var repos = JSON.parse(profile_request.responseText);
 
-            /*
-            This function call creates all of the HTML to display the language info box and appends it to
-            the page's DOM
-
-            repos = JSON object with all of the user's repositories and their properties
-             */
+            // This function call creates all of the HTML to display the language info box and appends it to
+            // the page's DOM
+            //
+            // repos = JSON object with all of the user's repositories and their properties
 
             new_organize_langs(repos);
 
@@ -435,28 +417,21 @@ function display_language_fluency() {
 
     };
 
-    /*
-    Send a JSON REST HTML request to the GitHub API
-    uses a authentication token that is generated by GitHub for the extension user
-    DO NOT USE A STATIC AUTHORIZATION TOKEN, TOKEN MUST BE SPECIFIC TO EXTENSION USER
-     */
+
+    // Send a JSON REST HTML request to the GitHub API, no access token required
 
     profile_request.open("GET", "https://api.github.com/users" + get_current_profile() + "/repos", true);
-    profile_request.setRequestHeader("Authorization", "token " + ACCESS_TOKEN);
     profile_request.send();
 
 }
 
-/*
-Specify call time in manifest.JSON
-currently set to "document-start", this will call the script BEFORE the page finishes loading
- */
+
+// Specify call time in manifest.JSON
+// currently set to "document-start", this will call the script BEFORE the page finishes loading
 
 display_language_fluency();
 
-/*
-Log Credits, use this area to log information about the extension to the JS console on chrome
- */
+// Log Credits, use this area to log information about the extension to the JS console on chrome
 
 console.log(GitHub_Profile_Fluency_Chrome_Extension);
 console.log(Current_Build_is);
@@ -464,19 +439,3 @@ console.log(Current_Release_is);
 
 console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
 console.log(EXTENSION_NAME + " Has finished displaying fluency");
-
-function probe_data(repoLink) {
-
-    /*
-    for repository in repolinks
-        get information about repository
-        return the files that the user has worked on
-        return the languages of those files
-
-        for each language from each file
-            add to the language counter
-            add to the total size
-            return sorted list of languages by amount of code
-     */
-
-}

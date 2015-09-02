@@ -1,17 +1,15 @@
-/*
- JSON Dependencies include:
- - github_colors
-
- JSON element created by GitHub user ozh
- https://github.com/ozh
-
- This is the source code for the JSON list
- I have used an un-altered version of this source code for this extension
- https://github.com/ozh/github-colors/blob/master/colors.json
-
- Source repository by ozh
- https://github.com/ozh/github-colors
- */
+// JSON Dependencies include:
+// - github_colors
+//
+// JSON element created by GitHub user ozh
+// https://github.com/ozh
+//
+// This is the source code for the JSON list
+// I have used an un-altered version of this source code for this extension
+// https://github.com/ozh/github-colors/blob/master/colors.json
+//
+// Source repository by ozh
+// https://github.com/ozh/github-colors
 
 var github_colors = {
     "ABAP": {"color": "#E8274B", "url": "https://github.com/trending?l=ABAP"},

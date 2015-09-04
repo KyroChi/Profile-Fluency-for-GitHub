@@ -12,3 +12,7 @@ This plugin adds a language display bar at the top of a user's profile. The disp
 ![Screenshot](http://i.imgur.com/qfZjAXQ.png)
 
 ![Another Screenshot](http://i.imgur.com/8GMwDcn.png)
+
+## Contribution
+
+To create a version of this plugin that you can test, clone the repository and than in google chrome load the plugin as an unpacked extension and than you can begin to test various modifications to the source code

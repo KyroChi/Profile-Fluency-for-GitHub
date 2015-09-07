@@ -24,7 +24,7 @@
 
 var EXTENSION_NAME = "GitHub Profile Fluency";
 
-var Current_Build_is =                                "v1.5.0";
+var Current_Build_is =                                "v1.5.1";
 var Current_Release_is =                              "v1.4.0";
 
 // vx.0.0 = major changes, will no longer be compatible
@@ -236,9 +236,13 @@ for (var repository in total_repositories) {
         // Increase total size
         total_length += total_repositories[repository].size;
 
-        if (!languages[total_repositories[repository].language] && total_repositories[repository].language != null && !total_repositories[repository].fork) {
+        if (!languages[total_repositories[repository].language] && total_repositories[repository].language != null) {
 
             if (total_repositories[repository].size == 0) {
+
+                languages[total_repositories[repository].language] = 0.1;
+
+            } if (total_repositories[repository].fork) {
 
                 languages[total_repositories[repository].language] = 0.1;
 

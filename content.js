@@ -45,8 +45,6 @@ var Current_Release_is =                              "v1.4.0";
 // - Refactored entire display function
 //
 // TODO:
-// - fix display so that languages don't spill out of box if user has lots of languages
-// - More than 30 languages
 // - Get all languages in a repository, not just the repository.language attribute
 // - Only show languages from files that the user is a direct contributor to
 // - Look for updates and auto-update
@@ -140,6 +138,8 @@ function get_current_profile() {
     return a.pathname;
 
 }
+
+console.log(get_current_profile());
 
 // HTML DOM
 
@@ -236,7 +236,7 @@ for (var repository in total_repositories) {
         // Increase total size
         total_length += total_repositories[repository].size;
 
-        if (!languages[total_repositories[repository].language] && total_repositories[repository].language != null) {
+        if (!languages[total_repositories[repository].language] && total_repositories[repository].language != null && !total_repositories[repository].fork) {
 
             if (total_repositories[repository].size == 0) {
 
@@ -250,7 +250,7 @@ for (var repository in total_repositories) {
 
             total_size += total_repositories[repository].size;
 
-        } if (languages[total_repositories[repository].language] && total_repositories[repository].language != null) {
+        } if (languages[total_repositories[repository].language] && total_repositories[repository].language != null && !total_repositories[repository].fork) {
 
             languages[total_repositories[repository].language] += total_repositories[repository].size;
             total_size += total_repositories[repository].size;
@@ -341,3 +341,27 @@ console.log("Release " + Current_Release_is);
 
 console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
 console.log(EXTENSION_NAME + " Has finished displaying fluency");
+
+function mine_some_data () {
+
+    var pages = 0;
+    var total_repositories = get_json( "https://api.github.com/users" + get_current_profile() + "/repos");
+
+    // Get all repositories if user has more than 30 repositories
+    while (total_repositories.length > 29 + (29 * pages)) {
+
+        pages += 1;
+        var page_num = pages + 1;
+        var add_page = get_json("https://api.github.com/users" + get_current_profile() + "/repos?page=" + page_num.toString());
+        total_repositories = total_repositories.concat(add_page);
+
+    }
+
+    for (var i = 0; i < total_repositories.length; i++) {
+
+        var repo_events = get_json(total_repositories[i].events_url);
+        console.log(repo_events);
+
+    }
+
+}

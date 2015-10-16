@@ -24,7 +24,7 @@
 
 var EXTENSION_NAME = "GitHub Profile Fluency";
 
-var Current_Build_is =                                "v1.5.1";
+var Current_Build_is =                                "v1.6.0";
 var Current_Release_is =                              "v1.5.1";
 
 // vx.0.0 = major changes, will no longer be compatible
@@ -205,10 +205,6 @@ div2.className = "repository-lang-stats-graph js-toggle-lang-stats";
 
 div0.appendChild(div1);
 
-
-
-
-
 var pages = 0;
 var total_repositories = get_json( "https://api.github.com/users" + get_current_profile() + "/repos");
 
@@ -338,8 +334,8 @@ div0.style.marginBottom = "20px";
 var appendTo = document.getElementsByClassName("contributions-tab")[0];
 appendTo.insertBefore(div0, appendTo.children[0]);
 
-console.log("Build " + Current_Build_is);
-console.log("Release " + Current_Release_is);
+// console.log("Build " + Current_Build_is);
+// console.log("Release " + Current_Release_is);
 
-console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
-console.log(EXTENSION_NAME + " Has finished displaying fluency");
+// console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
+// console.log(EXTENSION_NAME + " Has finished displaying fluency");

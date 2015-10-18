@@ -1,4 +1,4 @@
-build_all: chrome_dev firefox_dev
+build_all: build_chrome build_firefox
 		@echo built chrome and firefox development directories
 
 build_chrome:
@@ -19,8 +19,6 @@ build_firefox:
 		@cp src/icon/icon-16.png firefox_development/data/
 		@cp src/icon/icon-32.png firefox_development/data/
 		@cp src/icon/icon-64.png firefox_development/data/
-		@mkdir firefox_development/test/
-		@cp firefox/test-index.js firefox_development/test/
 
 		@cp src/js/fftest.js firefox_development/data/
 

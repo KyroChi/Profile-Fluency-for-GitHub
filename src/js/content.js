@@ -234,11 +234,13 @@ for (var repository in total_repositories) {
 
             if (total_repositories[repository].size == 0 || total_repositories[repository].size == 0.0) {
 
-                languages[total_repositories[repository].language] = 0.1;
+                languages[total_repositories[repository].language] = 10;
+                total_size += 10;
 
-            } if (total_repositories[repository].fork) {
+            } else if (total_repositories[repository].fork) {
 
-                languages[total_repositories[repository].language] = 0.1;
+                languages[total_repositories[repository].language] = 10;
+                total_size += 10;
 
             } else {
 

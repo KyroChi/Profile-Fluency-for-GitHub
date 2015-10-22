@@ -334,8 +334,8 @@ div0.style.marginBottom = "20px";
 var appendTo = document.getElementsByClassName("contributions-tab")[0];
 appendTo.insertBefore(div0, appendTo.children[0]);
 
-console.log("Build " + Current_Build_is);
-console.log("Release " + Current_Release_is);
+// console.log("Build " + Current_Build_is);
+// console.log("Release " + Current_Release_is);
 
-console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
-console.log(EXTENSION_NAME + " Has finished displaying fluency");
+// console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
+// console.log(EXTENSION_NAME + " Has finished displaying fluency");

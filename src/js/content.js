@@ -22,7 +22,7 @@
 
 "use strict";
 
-var EXTENSION_NAME = "GitHub Profile Fluency";
+var EXTENSION_NAME = "GitHub-Profile-Fluency";
 
 var Current_Build_is =                                "v1.6.0";
 var Current_Release_is =                              "v1.5.1";
@@ -233,20 +233,20 @@ for (var repository in total_repositories) {
         if (!languages[total_repositories[repository].language] && total_repositories[repository].language != null) {
 
             if (total_repositories[repository].size == 0 || total_repositories[repository].size == 0.0) {
+                
+                languages[total_repositories[repository].language] = 10;
+                total_size += 10
 
-                languages[total_repositories[repository].language] = 0.1;
+            } else if (total_repositories[repository].fork) {
 
-            } if (total_repositories[repository].fork) {
-
-                languages[total_repositories[repository].language] = 0.1;
+                languages[total_repositories[repository].language] = 10;
+                total_size += 10
 
             } else {
 
                 languages[total_repositories[repository].language] = total_repositories[repository].size;
 
             }
-
-            total_size += total_repositories[repository].size;
 
         } if (languages[total_repositories[repository].language] && total_repositories[repository].language != null && !total_repositories[repository].fork) {
 
@@ -264,6 +264,7 @@ for (var repository in total_repositories) {
     }
 
 }
+console.log(languages);
 
 var sorted_languages = [];
 
@@ -337,5 +338,5 @@ appendTo.insertBefore(div0, appendTo.children[0]);
 // console.log("Build " + Current_Build_is);
 // console.log("Release " + Current_Release_is);
 
-// console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
+// console.log("GitHub-Profile-Fluency Authored By: " + AUTHORED_BY);
 // console.log(EXTENSION_NAME + " Has finished displaying fluency");

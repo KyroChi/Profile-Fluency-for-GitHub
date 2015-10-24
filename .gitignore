@@ -1,4 +1,5 @@
 *.idea
 *.xml
+*.zip
 chrome_development/
 firefox_development/

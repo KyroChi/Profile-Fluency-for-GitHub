@@ -27,38 +27,13 @@ var EXTENSION_NAME = "GitHub Profile Fluency";
 var Current_Build_is =                                "v1.6.0";
 var Current_Release_is =                              "v1.5.1";
 
-// vx.0.0 = major changes, will no longer be compatible
-// update status: update immediately
-//
-// v0.x.0 = minor changes
-// update status: recommend update
-//
-// v0.0.x = bug fixes
-// update status: not a required update
-//
-// Release Notes for v1.3.0:
-// - Removed all forms of authentication, ready for publishing on extension store
-// Release Notes for v1.4.0:
-// - Improved Chrome Permissions
-// Release Notes for v1.5.0:
-// - Pagination to allow the display of 30+ repositories
-// - Refactored entire display function
-//
 // TODO:
 // - Get all languages in a repository, not just the repository.language attribute
 // - Only show languages from files that the user is a direct contributor to
-// - Look for updates and auto-update
-// - Settings to turn off auto-update
 // - Extension Information
 //
 // This extension adds a box to a user's profile which displays the languages they know based
 // off of repositories that they have contributed to
-//
-// Contribution Guidelines:
-// If you are interested in contributing create a fork and create a merge request, your code will be reviewed before
-// being merged and committed to master.
-// Follow the programming style that is already present in this extension.
-// After contributing add your name to the AUTHORED_BY variable so that your work is appropriately credited
 //
 // GitHub Repository:
 // https://github.com/kyrochi/githubprofilefluency
@@ -90,23 +65,6 @@ function get_json(url) {
 
     }
 }
-
-// JSON Dependencies include:
-// - github_colors
-//
-// JSON element created by GitHub user ozh
-// https://github.com/ozh
-//
-// This is the source code for the JSON list
-// I have used an un-altered version of this source code for this extension
-// https://github.com/ozh/github-colors/blob/master/colors.json
-//
-// Source repository by ozh
-// https://github.com/ozh/github-colors
-//
-// Pulls from raw JSON object so that this plugin always has current dependencies
-
-var github_colors = get_json("https://raw.githubusercontent.com/ozh/github-colors/master/colors.json");
 
 // Default profile is:
 //

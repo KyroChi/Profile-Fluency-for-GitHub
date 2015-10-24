@@ -1,0 +1,12 @@
+{
+  "title": "GitHub Profile Fluency",
+  "name": "profile_fluency",
+  "version": "1.6.0",
+  "description": "An add-on that displays the languages a user on GitHub knows",
+  "main": "data/firefox.js",
+  "author": "Kyle Chickering",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT"
+}

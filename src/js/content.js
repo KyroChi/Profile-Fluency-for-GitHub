@@ -61,23 +61,6 @@ function get_json(url) {
     }
 }
 
-// JSON Dependencies include:
-// - github_colors
-//
-// JSON element created by GitHub user ozh
-// https://github.com/ozh
-//
-// This is the source code for the JSON list
-// I have used an un-altered version of this source code for this extension
-// https://github.com/ozh/github-colors/blob/master/colors.json
-//
-// Source repository by ozh
-// https://github.com/ozh/github-colors
-//
-// Pulls from raw JSON object so that this plugin always has current dependencies
-
-var github_colors = get_json("https://raw.githubusercontent.com/ozh/github-colors/master/colors.json");
-
 // Default profile is:
 //
 // PROFILE = "/kyrochi"

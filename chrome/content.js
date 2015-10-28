@@ -26,8 +26,8 @@ SOFTWARE.
 
 var EXTENSION_NAME = "GitHub Profile Fluency";
 
-var Current_Build_is =                                "v1.6.0";
-var Current_Release_is =                              "v1.5.1";
+var Current_Build_is =                                "v0.0.1";
+var Current_Release_is =                              "v1.6.1";
 
 /*
 TODO:
@@ -70,6 +70,25 @@ function get_json(url) {
 
     }
 }
+
+/*
+JSON Dependencies include:
+- github_colors
+
+JSON element created by GitHub user ozh
+https://github.com/ozh
+
+This is the source code for the JSON list
+I have used an un-altered version of this source code for this extension
+https://github.com/ozh/github-colors/blob/master/github_colors.js
+
+Source repository by ozh
+https://github.com/ozh/github-colors
+
+UPDATED: 10 24 15
+*/
+
+var github_colors = get_json("https://github.com/ozh/github-colors/blob/master/github_colors.js");
 
 /*
 Default profile is:

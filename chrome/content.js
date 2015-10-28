@@ -26,8 +26,8 @@ SOFTWARE.
 
 var EXTENSION_NAME = "GitHub Profile Fluency";
 
-var Current_Build_is =                                "v0.0.1";
-var Current_Release_is =                              "v1.6.1";
+var Current_Build_is =                                "v2.0.0";
+var Current_Release_is =                              "v2.0.0";
 
 /*
 TODO:

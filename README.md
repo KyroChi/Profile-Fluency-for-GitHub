@@ -4,7 +4,7 @@
 ![current version](https://img.shields.io/badge/build-2.0.0-green.svg)
 ![current release chrome](https://img.shields.io/badge/chrome-2.0.0-green.svg)
 
-![chrome](https://img.shields.io/badge/-Chrome-blue.svg) : [Click Here](https://chrome.google.com/webstore/detail/github-profile-fluency/ebehmeojfclfifngmnfedkbakddbecja)
+[Get the extension here!](https://chrome.google.com/webstore/detail/github-profile-fluency/ebehmeojfclfifngmnfedkbakddbecja)
 
 This plugin adds a language display bar at the top of a user's profile. The display shows how many languages the user 
 has used in their public repositories and has a color bar that mimics that of the repository language statistics bar.

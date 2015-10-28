@@ -1,8 +1,8 @@
 ## GitHub Profile Fluency
 
 
-![current version](https://img.shields.io/badge/build-0.0.1-green.svg)
-![current release chrome](https://img.shields.io/badge/chrome-1.6.0-green.svg)
+![current version](https://img.shields.io/badge/build-2.0.0-green.svg)
+![current release chrome](https://img.shields.io/badge/chrome-2.0.0-green.svg)
 
 ![chrome](https://img.shields.io/badge/-Chrome-blue.svg) : [Click Here](https://chrome.google.com/webstore/detail/github-profile-fluency/ebehmeojfclfifngmnfedkbakddbecja)
 

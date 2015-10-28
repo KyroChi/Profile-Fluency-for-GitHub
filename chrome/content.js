@@ -88,7 +88,7 @@ https://github.com/ozh/github-colors
 UPDATED: 10 24 15
 */
 
-var github_colors = get_json("https://github.com/ozh/github-colors/blob/master/github_colors.js");
+var github_colors = get_json("https://raw.githubusercontent.com/ozh/github-colors/master/colors.json");
 
 /*
 Default profile is:

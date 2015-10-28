@@ -1,24 +1,26 @@
-// The MIT License (MIT)
-//
-// Copyright (c) 2015 Kyle Chickering
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in all
-// copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-// SOFTWARE.
+/*
+The MIT License (MIT)
+
+Copyright (c) 2015 Kyle Chickering
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 
 "use strict";
 
@@ -27,24 +29,27 @@ var EXTENSION_NAME = "GitHub Profile Fluency";
 var Current_Build_is =                                "v1.6.0";
 var Current_Release_is =                              "v1.5.1";
 
-// TODO:
-// - Get all languages in a repository, not just the repository.language attribute
-// - Only show languages from files that the user is a direct contributor to
-// - Extension Information
-//
-// This extension adds a box to a user's profile which displays the languages they know based
-// off of repositories that they have contributed to
-//
-// GitHub Repository:
-// https://github.com/kyrochi/githubprofilefluency
-//
-// Google Chrome Extension WareHouse:
-// https://goo.gl/lryKuS
+/*
+TODO:
+- Get all languages in a repository, not just the repository.language attribute
+- Only show languages from files that the user is a direct contributor to
+
+This extension adds a box to a user's profile which displays the languages they know based
+off of repositories that they have contributed to
+
+GitHub Repository:
+https://github.com/kyrochi/githubprofilefluency
+
+Google Chrome Extension WareHouse:
+https://goo.gl/lryKuS
+*/
 
 var AUTHORED_BY = ["Kyle Chickering"];
 
-// Synchronous, not Asynchronous so that a JSON object is returned before the program moves on
-// Call get_json("http://url.goes-here") to retrieve API objects as JSON
+/*
+Synchronous, not Asynchronous so that a JSON object is returned before the program moves on
+Call get_json("http://url.goes-here") to retrieve API objects as JSON
+ */
 
 function get_json(url) {
 
@@ -66,26 +71,30 @@ function get_json(url) {
     }
 }
 
-// Default profile is:
-//
-// PROFILE = "/kyrochi"
-//
-// BASE_PATH = "https://www.github.com"
-// PROFILE_PATH = BASE_PATH + PROFILE
-// https://www.github.com/kyrochi
-//
-// make API calls to:
-//
-// BASE_API_PATH = "https://api.github.com/users"
-// PROFILE_API_PATH = BASE_HTTPS_PATH + PROFILE
-// https://api.github.com/users/kyrochi
-//
-// profile variable is the location of the profile where this extension pulls its information from
+/*
+Default profile is:
+
+PROFILE = "/kyrochi"
+
+BASE_PATH = "https://www.github.com"
+PROFILE_PATH = BASE_PATH + PROFILE
+https://www.github.com/kyrochi
+
+make API calls to:
+
+BASE_API_PATH = "https://api.github.com/users"
+PROFILE_API_PATH = BASE_HTTPS_PATH + PROFILE
+https://api.github.com/users/kyrochi
+
+profile variable is the location of the profile where this extension pulls its information from
+*/
 
 var profile = "/kyrochi";
 
-// Gets the current URL of the profile you are viewing and derives the "/username" that is needed to send an
-// API call to the GitHub API
+/*
+Gets the current URL of the profile you are viewing and derives the "/username" that is needed to send an
+API call to the GitHub API
+*/
 
 function get_current_profile() {
 
@@ -293,9 +302,3 @@ div0.style.marginBottom = "20px";
 
 var appendTo = document.getElementsByClassName("contributions-tab")[0];
 appendTo.insertBefore(div0, appendTo.children[0]);
-
-// console.log("Build " + Current_Build_is);
-// console.log("Release " + Current_Release_is);
-
-// console.log("GitHub Profile Fluency Authored By: " + AUTHORED_BY);
-// console.log(EXTENSION_NAME + " Has finished displaying fluency");

@@ -268,9 +268,11 @@ sorted_languages.sort(function(a, b) {return b[1] - a[1]});
 
 languages = sorted_languages;
 
-for (var i = 0; i < sorted_languages.length; i++) {
+var display_languages = 7;
 
-    if (i < 7) {
+for (var i = 0; i < languages.length; i++) {
+
+    if (i < display_languages) {
         var ol_li = document.createElement("LI");
         var ol_li_a = document.createElement("A");
         ol_li_a.href = github_colors[languages[i][0]].url;
@@ -303,6 +305,45 @@ for (var i = 0; i < sorted_languages.length; i++) {
 
         ol_lang.appendChild(ol_li);
         div2.appendChild(span_color);
+    }
+    else {
+	var ol_li = document.createElement("LI");
+	var ol_li_a = document.createElement("A");
+        ol_li_a.href = "#";
+
+	var percentage = total_size;
+	for (var j = 0; j < i; j++)
+	    percentage -= languages[j][1];
+	percentage /= total_size;
+
+	var span_language_color = document.createElement("SPAN");
+	span_language_color.className = "color-block language-color";
+	span_language_color.style.backgroundColor = "#ededed";
+
+	var span_language = document.createElement("SPAN");
+	span_language.className = "lang";
+	span_language.innerHTML = "   Other";
+
+	var span_percent = document.createElement("SPAN");
+	span_percent.className = "percent";
+	span_percent.innerHTML = "   " + (percentage * 100).toFixed(1) + "%";
+
+        ol_li_a.appendChild(span_language_color);
+        ol_li_a.appendChild(span_language);
+        ol_li_a.appendChild(span_percent);
+
+        ol_li.appendChild(ol_li_a);
+
+	var span_color = document.createElement("SPAN");
+	span_color.className = "language-color";
+	span_color.style.width = percentage + "%";
+	span_color.style.backgroundColor = "#ededed";
+	span_color.innerHTML = "   Other";
+
+	ol_lang.appendChild(ol_li);
+	div2.appendChild(span_color);
+
+	break;
     }
 
 }

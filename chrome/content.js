@@ -146,6 +146,7 @@ var li_0 = document.createElement("LI");
 li_0.className = "commits";
 
 var li_0_a_0 = document.createElement("A");
+li_0_a_0.className = "js-toggle-lang-stats";
 
 var li_0_a_0_span_0 = document.createElement("SPAN");
 li_0_a_0_span_0.className = "octicon octicon-keyboard";
@@ -267,7 +268,7 @@ sorted_languages.sort(function(a, b) {return b[1] - a[1]});
 
 languages = sorted_languages;
 
-for (var i = 0; i < languages.length; i++) {
+for (var i = 0; i < sorted_languages.length; i++) {
 
     if (i < 7) {
         var ol_li = document.createElement("LI");

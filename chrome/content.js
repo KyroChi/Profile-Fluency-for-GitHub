@@ -361,5 +361,32 @@ div0.appendChild(div2);
 
 div0.style.marginBottom = "20px";
 
-var appendTo = document.getElementsByClassName("contributions-tab")[0];
-appendTo.insertBefore(div0, appendTo.children[0]);
+//Function that wraps extension embedding in try/catch
+function appendToDocument(){
+    try{
+        var appendTo = document.getElementsByClassName("contributions-tab")[0];
+        appendTo.insertBefore(div0, appendTo.children[0]);
+    }
+    catch(e){
+        //console.debug(e);
+    }
+}
+
+appendToDocument();
+
+
+//Attempts to reload the extension on an ajax request
+//Fixes the User Profile tabs bug
+//Uses a timeout to reduce function call overload (Github uses many ajax requests for one page)
+function reloadOnAjaxLoad()
+{
+    document.removeEventListener("DOMSubtreeModified", reloadOnAjaxLoad);
+    setTimeout(function() {
+        appendToDocument();
+        document.addEventListener("DOMSubtreeModified", reloadOnAjaxLoad, false);
+    }, 500);
+
+}
+
+//Contributions, Repositories, and Public Activity are all loaded asychronously and must be listened to
+document.addEventListener("DOMSubtreeModified", reloadOnAjaxLoad, false);

@@ -364,7 +364,7 @@ div0.style.marginBottom = "20px";
 //Function that wraps extension embedding in try/catch
 function appendToDocument(){
     try{
-        var appendTo = document.getElementsByClassName("contributions-tab")[0];
+        var appendTo = document.getElementsByClassName("overview-tab")[0];
         appendTo.insertBefore(div0, appendTo.children[0]);
     }
     catch(e){
